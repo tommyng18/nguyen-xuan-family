@@ -7,7 +7,7 @@ const globalForPrisma = globalThis as unknown as {
 }
 
 function createPrismaClient() {
-  // Use Turso in production, local SQLite in development
+  // Use Turso in production
   if (process.env.TURSO_DATABASE_URL && process.env.TURSO_AUTH_TOKEN) {
     const libsql = createClient({
       url: process.env.TURSO_DATABASE_URL,
